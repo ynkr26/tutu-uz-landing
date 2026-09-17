@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Авиабилеты Узбекистан — Россия | tutu.ru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="src/styles.css" />
+
+  <!--
+    Яндекс.Метрика — ПЛЕЙСХОЛДЕР, счётчик пока не подключён (нет ID).
+    Как активировать:
+    1. Зарегистрировать счётчик на https://metrika.yandex.ru/ (для домена, на котором в итоге будет жить лендинг).
+    2. Заменить REPLACE_WITH_COUNTER_ID ниже на реальный числовой ID счётчика (в двух местах: в вызове ym(...) и в src у noscript-пикселя).
+    3. Раскомментировать блок (сейчас он обёрнут в HTML-комментарий, чтобы не слать битые запросы на несуществующий счётчик).
+  -->
+  <!--
+  <script type="text/javascript">
+     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+     m[i].l=1*new Date();
+     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+     ym(REPLACE_WITH_COUNTER_ID, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true
+     });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/REPLACE_WITH_COUNTER_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  -->
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="https://www.tutu.ru/" class="logo" target="_blank" rel="noopener">tutu<span>.ru</span></a>
+    <nav class="header-nav">
+      <a href="https://avia.tutu.ru/" class="active" data-i18n="nav.tickets" target="_blank" rel="noopener">Авиабилеты</a>
+      <a href="https://hotel.tutu.ru/" data-i18n="nav.hotels" target="_blank" rel="noopener">Отели</a>
+      <a href="https://www.tutu.ru/poezda/" data-i18n="nav.trains" target="_blank" rel="noopener">Поезда</a>
+    </nav>
+    <div class="header-right">
+      <button class="lang-switch" id="langSwitch" type="button">
+        <span class="lang-option active" data-lang-option="ru">RU</span>
+        <span class="lang-option" data-lang-option="uz">UZ</span>
+      </button>
+      <a href="https://www.tutu.ru/contacts/" class="header-chat" id="headerChat" target="_blank" rel="noopener">💬 <span data-i18n="nav.support">Поддержка</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-skyline" aria-hidden="true">
+    <svg viewBox="0 0 1440 480" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#241a72"/>
+          <stop offset="55%" stop-color="#4a30d4"/>
+          <stop offset="100%" stop-color="#8871f2"/>
+        </linearGradient>
+        <radialGradient id="sunGlow" cx="50%" cy="90%" r="55%">
+          <stop offset="0%" stop-color="#ff8a3d" stop-opacity=".55"/>
+          <stop offset="45%" stop-color="#ff8a3d" stop-opacity=".18"/>
+          <stop offset="100%" stop-color="#ff8a3d" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="textFade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#201658" stop-opacity=".7"/>
+          <stop offset="26%" stop-color="#201658" stop-opacity=".32"/>
+          <stop offset="48%" stop-color="#201658" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <rect x="0" y="0" width="1440" height="480" fill="url(#skyGrad)"/>
+      <rect x="0" y="0" width="1440" height="480" fill="url(#sunGlow)"/>
+
+      <circle cx="180" cy="70" r="1.6" fill="#fff" opacity=".5"/>
+      <circle cx="340" cy="110" r="1.2" fill="#fff" opacity=".4"/>
+      <circle cx="620" cy="55" r="1.4" fill="#fff" opacity=".45"/>
+      <circle cx="980" cy="85" r="1.6" fill="#fff" opacity=".5"/>
+      <circle cx="1120" cy="50" r="1.2" fill="#fff" opacity=".4"/>
+
+      <!-- маршрут Ташкент — Москва -->
+      <path d="M910 260 Q 1020 70 1128 210" stroke="#ffffff" stroke-width="2" stroke-dasharray="5 9" fill="none" opacity=".5"/>
+      <g transform="translate(1000,95) rotate(24)">
+        <path d="M0 8 L40 0 L48 5 L14 18 L10 30 L2 30 L4 18 Z" fill="#ffffff"/>
+        <path d="M8 20 L-6 27 L-2 31 L10 27 Z" fill="#ffffff" opacity=".75"/>
+      </g>
+
+      <!-- Ташкент: минареты и бирюзовый купол в духе Регистана -->
+      <g transform="translate(680,0)">
+        <g fill="#1d1454" opacity=".92">
+          <rect x="30" y="170" width="16" height="310" rx="2"/>
+          <circle cx="38" cy="163" r="9"/>
+          <polygon points="38,138 45,160 31,160"/>
+          <rect x="274" y="170" width="16" height="310" rx="2"/>
+          <circle cx="282" cy="163" r="9"/>
+          <polygon points="282,138 289,160 275,160"/>
+          <rect x="80" y="300" width="160" height="35"/>
+          <rect x="95" y="330" width="130" height="150"/>
+        </g>
+        <g fill="#2fb6ad" opacity=".9">
+          <path d="M118 300 Q160 205 202 300 Z"/>
+          <circle cx="160" cy="200" r="6"/>
+        </g>
+      </g>
+
+      <!-- Москва: Останкинская башня, высотка, храм Василия Блаженного -->
+      <g fill="#1d1454" opacity=".92">
+        <path d="M1120 480 L1126 220 Q1116 195 1126 175 L1129 110 L1133 110 L1136 175 Q1146 195 1136 220 L1142 480 Z"/>
+        <g>
+          <rect x="1180" y="400" width="90" height="80"/>
+          <rect x="1195" y="340" width="60" height="60"/>
+          <rect x="1208" y="290" width="34" height="50"/>
+          <polygon points="1208,290 1225,250 1242,290"/>
+          <circle cx="1225" cy="244" r="5"/>
+        </g>
+      </g>
+      <g>
+        <rect x="1300" y="420" width="120" height="60" fill="#1d1454" opacity=".92"/>
+        <rect x="1350" y="360" width="20" height="70" fill="#1d1454" opacity=".92"/>
+        <path d="M1345 360 L1360 318 L1375 360 Z" fill="#c9463c"/>
+        <rect x="1310" y="400" width="14" height="30" fill="#1d1454" opacity=".92"/>
+        <ellipse cx="1317" cy="391" rx="11" ry="14" fill="#2f8f6f"/>
+        <rect x="1335" y="405" width="12" height="25" fill="#1d1454" opacity=".92"/>
+        <ellipse cx="1341" cy="397" rx="9" ry="12" fill="#d4a72c"/>
+        <rect x="1383" y="405" width="12" height="25" fill="#1d1454" opacity=".92"/>
+        <ellipse cx="1389" cy="397" rx="9" ry="12" fill="#3b6fd4"/>
+        <rect x="1403" y="400" width="14" height="30" fill="#1d1454" opacity=".92"/>
+        <ellipse cx="1410" cy="391" rx="11" ry="14" fill="#c9463c"/>
+      </g>
+
+      <text x="840" y="300" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="700" font-family="'Tutu Sans','Inter',sans-serif" opacity=".9">🇺🇿 ТАШКЕНТ</text>
+      <text x="1355" y="300" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="700" font-family="'Tutu Sans','Inter',sans-serif" opacity=".9">🇷🇺 МОСКВА</text>
+
+      <rect x="0" y="0" width="1440" height="480" fill="url(#textFade)"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 data-i18n="hero.title">Летай на родину и обратно без лишних хлопот</h1>
+      <p data-i18n="hero.subtitle">Дешёвые авиабилеты между Узбекистаном и Россией — подбираем лучшие цены за вас</p>
+    </div>
+
+    <!-- SEARCH CARD -->
+    <form class="search-card" id="searchForm" novalidate>
+      <div class="trip-type">
+        <button type="button" class="trip-type-btn active" data-trip="oneway" data-i18n="search.oneway">В одну сторону</button>
+        <button type="button" class="trip-type-btn" data-trip="roundtrip" data-i18n="search.roundtrip">Туда-обратно</button>
+      </div>
+
+      <div class="search-row">
+        <div class="search-field" id="fieldFrom">
+          <label data-i18n="search.from">Откуда</label>
+          <input type="text" id="inputFrom" autocomplete="off" data-i18n-placeholder="search.placeholder" placeholder="Город или аэропорт" />
+          <div class="suggest-list" id="suggestFrom"></div>
+        </div>
+
+        <button type="button" class="swap-btn" id="swapBtn" title="Поменять местами">⇄</button>
+
+        <div class="search-field" id="fieldTo">
+          <label data-i18n="search.to">Куда</label>
+          <input type="text" id="inputTo" autocomplete="off" data-i18n-placeholder="search.placeholder" placeholder="Город или аэропорт" />
+          <div class="suggest-list" id="suggestTo"></div>
+        </div>
+
+        <div class="search-field search-field-date">
+          <label data-i18n="search.date">Дата вылета</label>
+          <input type="date" id="inputDateOut" />
+        </div>
+
+        <div class="search-field search-field-date hidden" id="fieldDateBack">
+          <label data-i18n="search.dateBack">Дата обратно</label>
+          <input type="date" id="inputDateBack" />
+        </div>
+
+        <div class="search-field search-field-passengers">
+          <label data-i18n="search.passengers">Пассажиры</label>
+          <button type="button" class="passengers-btn" id="passengersBtn">1</button>
+          <div class="passengers-popover hidden" id="passengersPopover">
+            <div class="stepper">
+              <div class="stepper-label">
+                <span data-i18n="passengers.adults">Взрослые</span>
+                <span class="stepper-hint" data-i18n="passengers.adultsHint">от 12 лет</span>
+              </div>
+              <div class="stepper-controls">
+                <button type="button" data-pax-minus="adults">−</button>
+                <span data-pax-count="adults">1</span>
+                <button type="button" data-pax-plus="adults">+</button>
+              </div>
+            </div>
+            <div class="stepper">
+              <div class="stepper-label">
+                <span data-i18n="passengers.children">Дети</span>
+                <span class="stepper-hint" data-i18n="passengers.childrenHint">от 2 до 11 лет</span>
+              </div>
+              <div class="stepper-controls">
+                <button type="button" data-pax-minus="children">−</button>
+                <span data-pax-count="children">0</span>
+                <button type="button" data-pax-plus="children">+</button>
+              </div>
+            </div>
+            <div class="stepper">
+              <div class="stepper-label">
+                <span data-i18n="passengers.infants">Младенцы</span>
+                <span class="stepper-hint" data-i18n="passengers.infantsHint">до 2 лет, без места</span>
+              </div>
+              <div class="stepper-controls">
+                <button type="button" data-pax-minus="infants">−</button>
+                <span data-pax-count="infants">0</span>
+                <button type="button" data-pax-plus="infants">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-field search-field-class">
+          <label data-i18n="search.class">Класс обслуживания</label>
+          <select id="inputClass">
+            <option value="economy" data-i18n="class.economy">Эконом</option>
+            <option value="comfort" data-i18n="class.comfort">Комфорт</option>
+            <option value="business" data-i18n="class.business">Бизнес</option>
+          </select>
+        </div>
+
+        <button type="submit" class="search-submit" data-i18n="search.submit">Найти билеты</button>
+      </div>
+      <label class="direct-only">
+        <input type="checkbox" id="directOnly" />
+        <span data-i18n="search.directOnly">Только прямые рейсы</span>
+      </label>
+    </form>
+
+    <div class="trust-strip">
+      <div class="trust-item">
+        <span class="trust-num">2,3 млн</span>
+        <span data-i18n="trust.tickets">билетов куплено через Tutu в 2026 году</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">★ 4,7</span>
+        <span data-i18n="trust.rating">средняя оценка сервиса</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">24/7</span>
+        <span data-i18n="trust.support">поддержка на русском языке</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="main-container">
+
+  <!-- ROUTES -->
+  <section class="routes-section">
+    <h2 class="section-title" data-i18n="routes.title">Популярные направления</h2>
+    <p class="section-sub" data-i18n="routes.subtitle">Билеты между Узбекистаном и Россией по выгодным ценам</p>
+    <div class="routes-scroller" id="routesScroller"></div>
+  </section>
+
+  <!-- PROMO (спокойный формат, не баннер) -->
+  <section class="promo-inline">
+    <div class="promo-inline-icon">🎟️</div>
+    <div class="promo-inline-text">
+      <div class="promo-inline-title" data-i18n="promo.title">Не забудьте про билет домой</div>
+      <div class="promo-inline-sub" data-i18n="promo.subtitle">Если пока не знаете точную дату — оформите обратный билет позже и получите скидку 1000 ₽ по промокоду</div>
+    </div>
+    <div class="promo-code-box">
+      <span class="promo-code" id="promoCode">DOMOY1000</span>
+      <button type="button" class="promo-copy-btn" id="promoCopyBtn" data-i18n="promo.copy">Скопировать код</button>
+    </div>
+  </section>
+
+  <!-- HOSTELS -->
+  <section class="hostels-section">
+    <h2 class="section-title" data-i18n="hostels.title">Где остановиться</h2>
+    <p class="section-sub" data-i18n="hostels.subtitle">Проверенные хостелы рядом с метро в Москве и Санкт-Петербурге</p>
+    <div class="hostels-grid" id="hostelsGrid"></div>
+  </section>
+
+  <!-- USEFUL INFO -->
+  <section class="info-section">
+    <h2 class="section-title" data-i18n="info.title">Полезно знать по приезде</h2>
+    <p class="section-sub" data-i18n="info.subtitle">Чек-лист первых шагов в России</p>
+    <div class="info-grid" id="infoGrid"></div>
+  </section>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-art" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <div class="logo">tutu<span>.ru</span></div>
+      </div>
+      <div class="footer-col">
+        <a href="https://avia.tutu.ru/" data-i18n="footer.tickets" target="_blank" rel="noopener">Авиабилеты</a>
+        <a href="https://www.tutu.ru/poezda/" data-i18n="footer.trains" target="_blank" rel="noopener">Ж/д билеты</a>
+        <a href="https://bus.tutu.ru/" data-i18n="footer.buses" target="_blank" rel="noopener">Автобусы</a>
+      </div>
+      <div class="footer-col">
+        <a href="https://hotel.tutu.ru/" data-i18n="footer.hotels" target="_blank" rel="noopener">Отели</a>
+        <a href="https://safe.tutu.ru/" data-i18n="footer.insurance" target="_blank" rel="noopener">Страхование</a>
+        <a href="https://www.tutu.ru/2read/" data-i18n="footer.visas" target="_blank" rel="noopener">Визы</a>
+      </div>
+      <div class="footer-col">
+        <a href="https://c.tutu.ru/company" data-i18n="footer.about" target="_blank" rel="noopener">О компании</a>
+        <a href="https://www.tutu.ru/contacts/" data-i18n="footer.contacts" target="_blank" rel="noopener">Контакты</a>
+        <a href="https://www.tutu.ru/contacts/" data-i18n="footer.support24" target="_blank" rel="noopener">Поддержка 24/7</a>
+      </div>
+      <div class="footer-col footer-app">
+        <span class="footer-app-label" data-i18n="footer.app">Приложение Tutu</span>
+        <div class="app-badges">
+          <a href="https://tutu.onelink.me/CCCT/4i4xdxrd" class="app-badge" target="_blank" rel="noopener">
+            <span class="app-badge-icon"></span>
+            <span class="app-badge-text"><small data-i18n="footer.appStoreHint">Загрузите в</small>App Store</span>
+          </a>
+          <a href="https://tutu.onelink.me/CCCT/fzfpk6m0" class="app-badge" target="_blank" rel="noopener">
+            <span class="app-badge-icon"></span>
+            <span class="app-badge-text"><small data-i18n="footer.googlePlayHint">Доступно в</small>Google Play</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-payments">
+      <span class="footer-payments-label" data-i18n="footer.payments">Принимаем к оплате</span>
+      <div class="payment-badges">
+        <span class="payment-badge">Visa</span>
+        <span class="payment-badge">Mastercard</span>
+        <span class="payment-badge">МИР</span>
+        <span class="payment-badge">UzCard</span>
+        <span class="payment-badge">Humo</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 tutu.ru</span>
+      <span><span data-i18n="footer.visaSupport">Визовая поддержка 24/7:</span> <a href="tel:88001234567">8 800 123-45-67</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="src/data.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
