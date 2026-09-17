@@ -374,17 +374,18 @@
     const reviewsWord = TRANSLATIONS['hostels.reviews'][currentLang];
     const verifiedText = TRANSLATIONS['hostels.verified'][currentLang];
     hostelsGrid.innerHTML = HOSTELS.map((h, i) => `
-      <a class="hostel-card" href="https://hotel.tutu.ru/" target="_blank" rel="noopener">
-        <div class="hostel-art">${hostelIcon(i)}</div>
+      <a class="hostel-card" href="${h.link || 'https://hotel.tutu.ru/'}" target="_blank" rel="noopener">
+        <div class="hostel-art">${h.photo ? `<img src="${h.photo}" alt="${h.name}" loading="lazy" />` : hostelIcon(i)}</div>
         <div class="hostel-body">
           <div class="hostel-city">${currentLang === 'uz' ? h.cityUz : h.city}</div>
-          <div class="hostel-name">${h.name}</div>
+          <div class="hostel-name">${currentLang === 'uz' && h.nameUz ? h.nameUz : h.name}</div>
           <div class="hostel-area">${currentLang === 'uz' ? h.areaUz : h.area}</div>
           <div class="hostel-rating-row">
             <span class="hostel-rating">★ ${h.rating}</span>
             <span class="hostel-reviews-count">(${h.reviews} ${reviewsWord})</span>
           </div>
           ${h.verified ? `<div class="hostel-verified">✓ ${verifiedText}</div>` : ''}
+          ${h.migrantTag ? `<div class="hostel-migrant-tag">🪪 ${currentLang === 'uz' ? h.migrantTagUz : h.migrantTag}</div>` : ''}
           <div class="hostel-footer">
             <span class="hostel-price">${priceText(h.price)} / ${nightWord}</span>
             <span class="hostel-price-sum">${sumText(h.price)}</span>
@@ -410,6 +411,25 @@
     setTimeout(() => { promoCopyBtn.textContent = TRANSLATIONS['promo.copy'][currentLang]; }, 1800);
   });
   promoCode.textContent = PROMO_CODE;
+
+  // ── Fakedoor: интерес к бригадной покупке (тест спроса, фичи ещё нет) ─
+  // Текст-обещание ("пока в разработке...") никому не виден заранее — это скрытый
+  // виджет (.fakedoor-popover), который всплывает только по клику на кнопку.
+  const fakedoorBtn = document.getElementById('fakedoorBtn');
+  const fakedoorPopover = document.getElementById('fakedoorPopover');
+  if (fakedoorBtn && fakedoorPopover) {
+    fakedoorBtn.addEventListener('click', () => {
+      // Цель для Яндекс.Метрики — считаем клики как сигнал интереса к фиче.
+      if (typeof ym === 'function') {
+        try { ym(112757957, 'reachGoal', 'fakedoor_brigade_interest'); } catch (e) {}
+      }
+      fakedoorBtn.disabled = true;
+      fakedoorBtn.textContent = '✓';
+      fakedoorPopover.classList.add('visible');
+      clearTimeout(fakedoorPopover._hideTimer);
+      fakedoorPopover._hideTimer = setTimeout(() => fakedoorPopover.classList.remove('visible'), 5000);
+    });
+  }
 
   // ── Boot ──────────────────────────────────────────────────────
   renderRoutes();
